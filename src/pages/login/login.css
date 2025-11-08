@@ -1,0 +1,10 @@
+.forgot_passowrd{
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    font-size: 0.875rem;
+    margin: 0 auto;
+    display: block;
+    min-width: 150px;
+}
