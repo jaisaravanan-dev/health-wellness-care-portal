@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import AuthPage from "./pages/AuthPage";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/register/Register";
@@ -6,6 +12,7 @@ import PatientDetails from "./pages/patientDetails/PatientDetail";
 // import HomePage from "./pages/HomePage";
 // import Dashboard from "./pages/Dashboard";
 import HomePage from "./pages/HomePage";
+import GoalTracker from "./pages/GoalTracker/GoalTracker";
 
 export function RequireAuth({ children }) {
   const isAuthenticated = localStorage.getItem("token"); // or context, redux, etc.
@@ -21,18 +28,31 @@ export function RequireAuth({ children }) {
 
 function App() {
   return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<AuthPage />} />
+      <Route
+        path="/dashboard"
+        element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        }
+      />
+      <Route path="/signup" element={<Register />} />
+      <Route path="/patient-details" element={<PatientDetails />} />
+      <Route path="/homePage" element={<HomePage />} />
+      <Route
+        path="/GoalTracker"
+        element={
+          <RequireAuth>
+            <GoalTracker />
+          </RequireAuth>
+        }
+      />
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<AuthPage />} />
-        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
-        <Route path="/signup" element={<Register />} />
-        <Route path="/patient-details" element={<PatientDetails />} />
-        <Route path="/homePage" element={<HomePage />} />
-        
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-      </Routes>
- 
+      {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+    </Routes>
   );
 }
 

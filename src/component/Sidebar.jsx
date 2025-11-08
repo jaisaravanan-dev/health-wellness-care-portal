@@ -7,10 +7,11 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { name: "Dashboard",  path: "/dashboard" },
+    { name: "Dashboard", path: "/dashboard" },
     { name: "My Profile", path: "/profile" },
     { name: "Wellness Goals", path: "/settings" },
     { name: "Messages", path: "/messages" },
+    { name: "Goal Tracker", path: "/GoalTracker" },
     { name: "Logout", path: "/" },
   ];
 
@@ -38,7 +39,10 @@ const Sidebar = () => {
             >
               Health
             </h1>
-            <button onClick={() => setOpen(!open)} className="text-gray-400 hover:text-white">
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-gray-400 hover:text-white"
+            >
               {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>

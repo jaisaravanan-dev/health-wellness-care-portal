@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  
+
   const healthArticles = [
     {
       title: "COVID-19 Updates",
@@ -59,7 +59,10 @@ const HomePage = () => {
             >
               <h3 className="text-lg font-bold mb-2">{article.title}</h3>
               <p className="text-gray-700 mb-4">{article.description}</p>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={()=>navigate("/dashboard")}>
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                onClick={() => navigate("/dashboard")}
+              >
                 Read More
               </button>
             </div>
