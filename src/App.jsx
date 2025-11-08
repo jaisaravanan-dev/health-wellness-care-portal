@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Register from "./pages/register/Register";
 import PatientDetails from "./pages/patientDetails/PatientDetail";
 // import Dashboard from "./pages/Dashboard";
+import HomePage from "./pages/HomePage";
 
 export function RequireAuth({ children }) {
   const isAuthenticated = localStorage.getItem("token"); // or context, redux, etc.
@@ -26,6 +27,7 @@ function App() {
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
         <Route path="/signup" element={<Register />} />
         <Route path="/patient-details" element={<PatientDetails />} />
+        <Route path="/homePage" element={<HomePage />} />
         
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
