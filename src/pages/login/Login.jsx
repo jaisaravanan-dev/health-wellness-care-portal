@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import InputFiled from "../../component/InputFiled/InputFiled";
 
 const Login = ({ onToggle }) => {
+
   const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
@@ -34,6 +35,7 @@ const Login = ({ onToggle }) => {
           value={form.email}
           onChange={handleChange}
           placeholder="Email"
+          label={"Email:"}
         />
         <InputFiled
           name="password"
@@ -41,6 +43,7 @@ const Login = ({ onToggle }) => {
           value={form.password}
           onChange={handleChange}
           placeholder="Password"
+          label={"Password:"}
         />
 
         <button
@@ -57,7 +60,9 @@ const Login = ({ onToggle }) => {
 
       <p
         className="text-center text-blue-500 text-sm mt-2 cursor-pointer hover:underline"
-        onClick={onToggle}
+        onClick={()=>
+          navigate("/signup")
+        }
       >
         New User? Register here
       </p>
