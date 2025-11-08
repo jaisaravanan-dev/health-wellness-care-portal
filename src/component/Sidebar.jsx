@@ -11,7 +11,7 @@ const Sidebar = () => {
     { name: "My Profile", path: "/profile" },
     { name: "Wellness Goals", path: "/settings" },
     { name: "Messages", path: "/settings" },
-    { name: "Logout", path: "/Login" },
+    { name: "Logout", path: "/" },
   ];
 
   const handleLogout = () => {
