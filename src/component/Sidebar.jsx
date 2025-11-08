@@ -10,7 +10,7 @@ const Sidebar = () => {
     { name: "Dashboard",  path: "/dashboard" },
     { name: "My Profile", path: "/profile" },
     { name: "Wellness Goals", path: "/settings" },
-    { name: "Messages", path: "/settings" },
+    { name: "Messages", path: "/messages" },
     { name: "Logout", path: "/" },
   ];
 
