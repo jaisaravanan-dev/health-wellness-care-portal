@@ -15,7 +15,8 @@ const Sidebar = () => {
   ];
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    console.log("Logging out...");
+    localStorage.removeItem("token");
     navigate("/");
   };
 
